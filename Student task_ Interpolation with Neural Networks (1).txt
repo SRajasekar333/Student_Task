@@ -1,0 +1,176 @@
+﻿Student task: Interpolation with Neural Networks
+
+
+Rajasekar Sankar
+28.09.2022
+
+
+Solutions
+
+
+
+
+1. Theoretical Questions
+
+
+1. How is the forward pass of a neural network defined?
+          
+* In forward pass, values of the output layers are calculated using the input data by traversing through all the neurons from first to the last layer. 
+* Weighted inputs (z) and respective outputs (a) of the hidden layers will be calculated from input data (x) and weights (w)
+* Then, output node (y) will be calculated  
+* The final step in the forward pass is to compute the loss function (𝛿), loss function is calculated from the output values.
+
+
+   * After doing forward pass, back propagation will be carried out to update the weights.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Let u be a fully connected neural network consisting of 4 layers with ReLu activation function approximating the sine function sin(x). Is it possible to compute the second order derivative with respect to x of the network by auto differentiation and obtain the correct derivative, i.e., the approximation of −sin(x). If not, why?
+
+
+   * No, it is not possible to compute the second order derivative for sin(x) function by auto-differentiation using 4 layers with the ReLu activation function.
+   * Sigmoid function has a similar shape to sin function, so it will work out. But ReLu is a linear function, so it requires a bigger network for approximation of sin function.
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   * The periodic nature of sinusoidal activation functions can give rise to a 'rippling' cost function with bad local minima, which may make training difficult
+   * The problem may not be so bad when the data is dominated by low-frequency components.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. Let x be a tensor with shape (12, 3, 128, 128). What is the output shape of the tensor x if I perform a calculation with 2D convolution layers with 32 3x3 filters, a stride of 2 and zero padding?
+
+
+Solution:  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   * The output shape of the tensor is [12, 1, 63, 32]
+   * If we take N=12, C=3, H=128, W=128, then output tensor size = [12, 32, 63, 63]
+2. Programming Task
+
+
+Build a neural network that fixed the measured data y at given sampling points X. Use a supervised learning technique in order to train the neural network. Finally, visualize the given data and the trained function by the neural network.
