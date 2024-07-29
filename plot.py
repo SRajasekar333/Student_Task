@@ -19,8 +19,7 @@ predictions_df = pd.read_csv(predictions_file_path)
 selected_images = predictions_df['Image Name'].sample(5).tolist()
 print(selected_images)
 
-# Directory containing the image data CSV files
-data_dir = "C:/Secondary/Prof.Farber/KIWI_Yolo2/KIWI_Yolo/Data/data/data/"
+
 
 # Function to extract data from the corresponding CSV file for a given image name
 def get_image_data(image_name):
