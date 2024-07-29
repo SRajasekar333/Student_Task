@@ -10,8 +10,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Path to the mini_data folder
-mini_data_folder_path = 'C:/Secondary/Prof.Farber/KIWI_Yolo2/KIWI_Yolo/Data/data/mini_data'  # Replace with the actual path to your mini_data folder
+
 
 # Function to convert polar coordinates to Cartesian and create a scatter plot
 def process_csv_file(file_path, output_folder):
